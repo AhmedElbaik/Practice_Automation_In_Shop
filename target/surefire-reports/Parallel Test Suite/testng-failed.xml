@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="2" parallel="tests" name="Firefox Tests(failed)" verbose="0">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.practice.automationtesting.tests.ShopTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testThinkingInHTMLBookPurchase"/>
+          <include name="generateAllureReport"/>
+        </methods>
+      </class> <!-- com.practice.automationtesting.tests.ShopTest -->
+    </classes>
+  </test> <!-- Firefox Tests(failed) -->
+  <test thread-count="2" parallel="tests" name="Chrome Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.practice.automationtesting.tests.ShopTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testThinkingInHTMLBookPurchase"/>
+          <include name="setup"/>
+          <include name="generateAllureReport"/>
+        </methods>
+      </class> <!-- com.practice.automationtesting.tests.ShopTest -->
+    </classes>
+  </test> <!-- Chrome Tests(failed) -->
+</suite> <!-- Failed suite [Parallel Test Suite] -->

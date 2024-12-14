@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-14T02:58:12 EET" name="Parallel Test Suite" finished-at="2024-12-14T02:58:25 EET" duration-ms="13614">
+    <groups>
+    </groups>
+    <test started-at="2024-12-14T02:58:12 EET" name="Chrome Tests" finished-at="2024-12-14T02:58:23 EET" duration-ms="11722">
+      <class name="com.practice.automationtesting.tests.ShopTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.practice.automationtesting.tests.ShopTest@773dab28]" started-at="2024-12-14T02:58:12 EET" name="setup" finished-at="2024-12-14T02:58:18 EET" duration-ms="6457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testThinkingInHTMLBookPurchase()[pri:0, instance:com.practice.automationtesting.tests.ShopTest@773dab28]" started-at="2024-12-14T02:58:18 EET" name="testThinkingInHTMLBookPurchase" description="Verify Thinking in HTML book purchase flow" finished-at="2024-12-14T02:58:23 EET" duration-ms="4566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThinkingInHTMLBookPurchase -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.practice.automationtesting.tests.ShopTest@773dab28]" started-at="2024-12-14T02:58:23 EET" name="tearDown" finished-at="2024-12-14T02:58:23 EET" duration-ms="349" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testThinkingInHTMLBookPurchase status=SUCCESS method=ShopTest.testThinkingInHTMLBookPurchase()[pri:0, instance:com.practice.automationtesting.tests.ShopTest@773dab28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.practice.automationtesting.tests.ShopTest -->
+    </test> <!-- Chrome Tests -->
+    <test started-at="2024-12-14T02:58:12 EET" name="Firefox Tests" finished-at="2024-12-14T02:58:25 EET" duration-ms="13614">
+      <class name="com.practice.automationtesting.tests.ShopTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.practice.automationtesting.tests.ShopTest@6dd91637]" started-at="2024-12-14T02:58:12 EET" name="setup" finished-at="2024-12-14T02:58:20 EET" duration-ms="8426" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testThinkingInHTMLBookPurchase()[pri:0, instance:com.practice.automationtesting.tests.ShopTest@6dd91637]" started-at="2024-12-14T02:58:20 EET" name="testThinkingInHTMLBookPurchase" description="Verify Thinking in HTML book purchase flow" finished-at="2024-12-14T02:58:24 EET" duration-ms="3727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testThinkingInHTMLBookPurchase -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.practice.automationtesting.tests.ShopTest@6dd91637]" started-at="2024-12-14T02:58:24 EET" name="tearDown" finished-at="2024-12-14T02:58:25 EET" duration-ms="1360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testThinkingInHTMLBookPurchase status=SUCCESS method=ShopTest.testThinkingInHTMLBookPurchase()[pri:0, instance:com.practice.automationtesting.tests.ShopTest@6dd91637] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="generateAllureReport()[pri:0, instance:com.practice.automationtesting.tests.ShopTest@6dd91637]" started-at="2024-12-14T02:58:25 EET" name="generateAllureReport" finished-at="2024-12-14T02:58:30 EET" duration-ms="5032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateAllureReport -->
+      </class> <!-- com.practice.automationtesting.tests.ShopTest -->
+    </test> <!-- Firefox Tests -->
+  </suite> <!-- Parallel Test Suite -->
+</testng-results>

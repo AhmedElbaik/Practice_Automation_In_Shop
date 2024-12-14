@@ -1,0 +1,66 @@
+# To execute this docker compose yml file use `docker compose -f docker-compose-v3-dynamic-grid.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker compose -f docker-compose-v3-dynamic-grid.yml down`
+version: "3.8"
+
+services:
+  selenium-hub:
+    image: selenium/hub:4.27.0-20241204
+    container_name: selenium-hub
+    environment:
+      - SE_ENABLE_TRACING=false
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    networks:
+      - selenium-grid
+
+  chrome-node:
+    image: selenium/node-chrome:4.27.0-20241204
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_NODE_VIDEO=true  # Enable video recording
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./videos:/videos  # Ensure the videos are saved to the host's 'videos' directory
+    networks:
+      - selenium-grid
+
+  firefox-node:
+    image: selenium/node-firefox:4.27.0-20241204
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_NODE_VIDEO=true  # Enable video recording for Firefox
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./videos:/videos
+    networks:
+      - selenium-grid
+
+  video:
+    image: selenium/video:ffmpeg-4.3.1-20230306
+    volumes:
+      - ./videos:/videos
+    depends_on:
+      - selenium-hub
+    environment:
+      - DISPLAY_CONTAINER_NAME=selenium-hub
+    networks:
+      - selenium-grid
+
+networks:
+  selenium-grid:
+    driver: bridge
